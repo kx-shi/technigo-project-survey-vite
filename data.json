@@ -1,0 +1,21 @@
+{
+    "questions":
+    [
+        
+        {
+            "question": "Fråga 1",
+            "answer1": "",
+            "answer2": "",
+            "answer3": "",
+            "answer4": "",
+            "weighting": [5, 1, 2, 3],
+            "id": 1
+        },
+        {
+            "question": "Fråga 2 är snlba",
+            "answer1": "",
+            "answer2": "",
+            "id": 2
+        }
+    ]
+}

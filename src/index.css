@@ -5,9 +5,44 @@
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --textColor: #ffffff;
 }
-
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+body{
+  margin: 0;
+}
+.container{
+  color: var(--textColor);
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  
+}
+/* Question card styling */
+.question-card-container {
+  min-width: fit-content;
+  position: absolute;
+  padding: 100px 50px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 20px;
+  border: 1px solid white;
+}
+.button-container {
+  text-align: center;
+}
+/* On 1080px-screen and less*/
+@media screen and (max-width: 1080px) {
+  .question-card-container{
+    padding: 80px 40px;
+  }
+  
+}
+/* On 630px-screen and less*/
+@media screen and (max-width: 630px) {
+  .question-card-container{
+    padding: 60px 20px;
+    
+  }
+  
 }

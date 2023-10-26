@@ -1,16 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
+import '../styles/QuestionTextInput.css';
 
-export const QuestionOne = (props) => {
-    const [placeholder, setPlaceholder] = useState("");
-
-    return(
-        <div id="question-one">
-            <p>props.question</p>
-            <input type="text"
-                    onChange={(event) => setPlaceholder(event.target.value)}
-                    value={placeholder}>
-            </input>
-            <p>{placeholder}</p>
-        </div>
-    )
+function QuestionTextInput({questionText}) {
+  return <div className="question-text" >
+    <p>{questionText}</p>
+    <input style={{textAlign:'center'}} type="text" id="text"/>
+  </div>;
 }
+
+export default QuestionTextInput;

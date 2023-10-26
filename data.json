@@ -3,19 +3,183 @@
     [
         
         {
-            "question": "Fråga 1",
-            "answer1": "",
-            "answer2": "",
-            "answer3": "",
-            "answer4": "",
-            "weighting": [5, 1, 2, 3],
-            "id": 1
+            "question": "Dawn or dusk?",
+            "type": "dropdown",
+            "id": 1,
+            "answers": [
+                {
+                    "answer-one": "Dawn",
+                    "weighting": [0.73, 0.73, 0.3, 0.26]
+                },
+                {
+                    "answer-two": "Dusk",
+                    "weighting": [0.27, 0.27, 0.7, 0.74]
+                }
+
+            ]
         },
         {
-            "question": "Fråga 2 är snlba",
-            "answer1": "",
-            "answer2": "",
-            "id": 2
+            "question": "Forest or river?",
+            "type": "dropdown",
+            "id": 2,
+            "answers": [
+                {
+                    "answer-one": "Forest",
+                    "weighting": [0.74, 0.73, 0.26, 0.28]
+                },
+                {
+                    "answer-two": "River",
+                    "weighting": [0.26, 0.27, 0.74, 0.72]
+                }
+
+            ]
+        },
+        {
+            "question": "Moon or stars?",
+            "type": "dropdown",
+            "id": 3,
+            "answers": [
+                {
+                    "answer-one": "Moon",
+                    "weighting": [0.27, 0.74, 0.33, 0.72]
+                },
+                {
+                    "answer-two": "Stars",
+                    "weighting": [0.73, 0.26, 0.67, 0.28]
+                }
+
+            ]
+        },
+        {
+            "question": "Four boxes are placed before you. Which would you try and open?",
+            "type": "radiobutton",
+            "id": 4,
+            "answers": [
+                {
+                    "answer-one": "The small tortoiseshell box, embellished with gold, inside which some small creature seems to be squeaking",
+                    "weighting": [0.14, 0.18, 0.46, 0.18]
+                },
+                {
+                    "answer-two": "The gleaming jet black box with a silver lock and key, marked with a mysterious rune that you know to be the mark of Merlin",
+                    "weighting": [0.18, 0.20, 0.16, 0.46]
+                },
+                {
+                    "answer-one": "The ornate golden casket, standing on clawed feet, whose inscription warns that both secret knowledge and unbearable temptation lie within",
+                    "weighting": [0.19, 0.44, 0.21, 0.19]
+                },
+                {
+                    "answer-two": "The small pewter box, unassuming and plain, with a scratched message upon it that reads ‘I open only for the worthy’",
+                    "weighting": [0.49, 0.19, 0.17, 0.17]
+                }
+
+            ]
+        },
+        {
+            "question": "Once every century, the Flutterby bush produces flowers that adapt their scent to attract the unwary. If it lured you, it would smell of:",
+            "type": "radiobutton",
+            "id": 5,
+            "answers": [
+                {
+                    "answer-one": "A crackling log fire",
+                    "weighting": [0.44, 0.17, 0.16, 0.21]
+                },
+                {
+                    "answer-two": "The sea",
+                    "weighting": [0.21, 0.22, 0.18, 0.46]
+                },
+                {
+                    "answer-one": "Fresh parchment",
+                    "weighting": [0.16, 0.45, 0.22, 0.15]
+                },
+                {
+                    "answer-two": "Home",
+                    "weighting": [0.19, 0.15, 0.43, 0.18]
+                }
+
+            ]
+        },
+        {
+            "question": "You enter an enchanted garden. What would you be most curious to examine first?",
+            "type": "radiobutton",
+            "id": 6,
+            "answers": [
+                {
+                    "answer-one": "The silver leafed tree bearing golden apples",
+                    "weighting": [0.17, 0.45, 0.18, 0.16]
+                },
+                {
+                    "answer-two": "The fat red toadstools that appear to be talking to each other",
+                    "weighting": [0.18, 0.15, 0.42, 0.17]
+                },
+                {
+                    "answer-one": "The bubbling pool, in the depths of which something luminous is swirling ",
+                    "weighting": [0.16, 0.22, 0.21, 0.46]
+                },
+                {
+                    "answer-two": "The statue of an old wizard with a strangely twinkling eye",
+                    "weighting": [0.49, 0.18, 0.19, 0.21]
+                }
+
+            ]
+        },
+        {
+            "question": "What are you most looking forward to learning at Hogwarts?",
+            "type": "radiobutton",
+            "id": 7,
+            "answers": [
+                {
+                    "answer-one": "Apparition and Disapparition (being able to materialize and dematerialize at will)",
+                    "weighting": [0.19, 0.06, 0.09, 0.23]
+                },
+                {
+                    "answer-two": "Transfiguration (turning one object into another object)",
+                    "weighting": [0.09, 0.27, 0.13, 0.12]
+                },
+                {
+                    "answer-one": "Flying on a broomstick",
+                    "weighting": [0.19, 0.07, 0.18, 0.09]
+                },
+                {
+                    "answer-two": "Hexes and jinxes",
+                    "weighting": [0.10, 0.11, 0.11, 0.28]
+                },
+                {
+                    "answer-one": "All about magical creatures, and how to befriend/care for them",
+                    "weighting": [0.09, 0.09, 0.27, 0.10]
+                },
+                {
+                    "answer-two": "Secrets about the castle",
+                    "weighting": [0.24, 0.13, 0.11, 0.09]
+                },
+                {
+                    "answer-two": "Every area of magic I can ",
+                    "weighting": [0.11, 0.27, 0.11, 0.19]
+                }
+            ]
+        },
+        {
+            "question": "What is your name?",
+            "type": "textinput",
+            "id": 8
+        }
+    ],
+    "results":
+    [
+        {
+            "housename": "Gryffindor",
+            "description": "The Gryffindor house is where you would find the pluckiest and most daring students. You are likely the type of person who likes to stand up for the little guy, challenges authority, has a tendency to act first and think later, is known as a class clown and takes board games very seriously. Some of the wizarding world’s best and brightest belonged to this house – Harry Potter and Albus Dumbledore are just a couple that spring to mind!"
+        },
+        {
+            "housename": "Ravenclaw",
+            "description": "If you are looking for the brainiest students – you would find them in Ravenclaw. With notable members such as Filius Flitwick and Luna Lovegood, you probably share the qualities of wisdom, wit and a skill for learning. Ravenclaws are often known for being quite eccentric and most of the great wizarding inventors and innovators have come from this house."
+        },
+        {
+            "housename": "Hufflepuff",
+            "description": "It is in Hufflepuff you will find the most trustworthy and hardworking students. There is an idea that Hufflepuffs are the least clever of all Hogwarts students – but that is not true. You likely are quite humble and the type of person who has a strong moral compass, always works hard, is the most loyal friend, and always has the best snacks."
+        },
+        {
+            "housename": "Slytherin",
+            "description": "While it is true that a lot of dark witches and wizards were sorted into Slytherin, not all who belong to this house are bad. Merlin himself even belonged to this misunderstood house! As a Slytherin, you are most likely ambitious, shrewd and possibly destined for greatness. You are the kind of person who is always one step ahead, has a dark sense of humour, thinks reputations is important, takes pride in their appearance and doesn't let anyone see their soft side."
         }
     ]
 }

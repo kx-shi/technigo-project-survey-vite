@@ -6,9 +6,16 @@
 
 # Survey Project
 
-Replace this readme with your own information about your project.
+Harry Potter sorting hat inspired survey using React states and controlled forms.
 
-Start by briefly describing the assignment in a sentence or two. Keep it short and to the point.
+## The data
+
+data.json contains a list of questions and a list of results.
+Each question contains a list of answers, each with their own weighting for the four houses.
+The order is [Gryffindor, Ravenclaw, Hufflepuff, Slytherin]
+Last question is unweighted 'what is your name?'-question
+
+Results are presented in the same order: Gryffindor, Ravenclaw, Hufflepuff, Slytherin
 
 ## Getting Started with the Project
 

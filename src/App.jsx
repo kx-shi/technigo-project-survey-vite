@@ -9,6 +9,7 @@ import img2 from "./assets/img2.jpg";
 import img3 from "./assets/img3.jpg";
 import img4 from "./assets/img4.jpg";
 import img5 from "./assets/img5.jpg";
+import data from "/data.json";
 
 
 export const App = () => {
@@ -17,7 +18,13 @@ export const App = () => {
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [currentBackground, setCurrentBackground] = useState(0);
 
+
+
+let questions = data.questions;
+console.log(questions);
+
   const handleNextQuestion = () => {
+    
     if (currentQuestion < totalQuestion) {
       // handle question number
       setCurrentQuestion(currentQuestion + 1);
@@ -25,6 +32,8 @@ export const App = () => {
       setCurrentBackground((currentBackground + 1));
     }
   };
+
+
 
   return (
     <div
@@ -35,13 +44,39 @@ export const App = () => {
         <QuestionNumber
           questionNumber={`Question ${currentQuestion}/${totalQuestion}`}
         />
-        <QuestionTextInput questionText={"Lorem ....."} />
+       
+ 
+
+
+
+
+
+       {currentQuestion === 1 && (
+        <QuestionTextInput questionText={"this is the first question"}/>
+        )}
+
+        {currentQuestion === 2 && (
+        <QuestionRadioButton questionText={"this is the second question?"} optionText1={"option 1"} optionText2={"option 2"}/>
+        )}
+
+        {currentQuestion === 3 && (
+        <QuestionSelectDropdown questionText={"this is the THIRD question?"}/>
+      )} 
+
+        {currentQuestion === 4 && (
+        <QuestionSelectDropdown questionText={"this is the FOURTH question?"}/>
+      )} 
+        
+        
+      
         <div className="button-container">
+
           <ButtonComponent
             buttonText={"Next question"}
-            onClick={handleNextQuestion}
-          />
+            onClick={handleNextQuestion} 
+            /> 
         </div>
+        
       </div>
     </div>
   );

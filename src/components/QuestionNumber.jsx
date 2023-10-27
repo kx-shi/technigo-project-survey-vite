@@ -1,9 +1,10 @@
 import React from "react";
+import '../styles/QuestionNumber.css'
 
-function QuestionNumber({ questionNumber }) {
+function QuestionNumber({ questionNumber, text }) {
   return (
-    <div style={{ textAlign: "center" }}>
-      <h3>{questionNumber}</h3>
+    <div style={{ textAlign: "center" }} className={questionNumber > 0 ? 'visible' : 'hidden'}>
+      <h3>{text}</h3>
     </div>
   );
 }

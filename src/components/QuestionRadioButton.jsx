@@ -1,31 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 
-function QuestionRadioButton({
-  questionText,
-  optionText1,
-  optionText2,
-  optionText3,
-  optionText4,
-}) {
+function QuestionRadioButton({questionData, updateFunction}) {
   return (
     <form className="question-radio">
-      <p>{questionText}</p>
-      <div>
-        <input type="radio" />
-        <label htmlFor="option1">{optionText1}</label>
-      </div>
-      <div>
-        <input type="radio" />
-        <label htmlFor="option2">{optionText2}</label>
-      </div>
-      <div>
-        <input type="radio" />
-        <label htmlFor="option3">{optionText3}</label>
-      </div>
-      <div>
-        <input type="radio" />
-        <label htmlFor="option4">{optionText4}</label>
-      </div>
+      <p>{questionData.text}</p>
+        {questionData.answers.map((answer, idx) => {
+            return(
+              <div key={idx}>
+                <input type={questionData.type} name="radiobutton" onChange={updateFunction} value={answer.weighting}/>
+                <label htmlFor={`option${idx}`}>{answer.text}</label>
+              </div>
+            )
+        })}
     </form>
   );
 }

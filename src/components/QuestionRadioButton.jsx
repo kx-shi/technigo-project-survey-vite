@@ -1,5 +1,6 @@
 import React from "react";
 
+/* Questions of type radio */
 function QuestionRadioButton({questionData, updateFunction}) {
   return (
     <form className="question-radio">

@@ -20,6 +20,9 @@ export const App = () => {
   const [results, setResults] = useState([0.0,0.0,0.0,0.0]);
   const [houseIndex, setHouseIndex] = useState(-1);
 
+  /* Handles clicks on button
+   * Updates question number, background image, and shows results when last question answered
+   */
   const handleNextQuestion = () => {
     switch(true) {
       case (currentQuestion < totalQuestions && currentQuestion > 0):
@@ -40,8 +43,12 @@ export const App = () => {
     }
   };
 
+  /* Handles the final results array
+   * 1. Normalize weights and reduce to two decimals
+   * 2. Find index of highest weight
+   * 3. Set houseIndex to index of highest weight
+   */
   const handleResults = () => {
-    // TODO: Display results
     let updatedResults = results.map((val, idx) => {
       return ((val/(data.questions.length)).toFixed(2));
     })
@@ -59,6 +66,7 @@ export const App = () => {
     console.log(houseIndex)
   }
 
+  /* Updates results between questions */
   const updateResults = (intermediateResults) => {
     let updatedResults = results.map((val, idx) => {
       return val + intermediateResults[idx];
@@ -68,7 +76,7 @@ export const App = () => {
   };
 
   const handleChange = (e) => {
-    let weightsArray = e.target.value.split(",");
+    let weightsArray = e.target.value.split(","); // parameter e is event provided by the questions components
     let weightsAsFloatArray = weightsArray.map((weight) => parseFloat(weight));
 
     setCurrentWeighting(weightsAsFloatArray);
@@ -104,7 +112,7 @@ export const App = () => {
           )}
 
           {
-          currentQuestion === 0 && (
+          currentQuestion === 0 && ( // Results card
             <div className="results-container">
               <h3 style={{ textAlign: "center" }}>Congratulations, you have been sorted into {data.houses[houseIndex].housename}</h3>
               <p>{data.houses[houseIndex].description}</p>

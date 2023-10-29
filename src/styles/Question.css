@@ -1,3 +1,8 @@
 .question-container {
     padding: 2em;
 }
+@media screen and (max-width: 630px) {
+    .question-container{
+      padding: 0px 5px;
+    }
+}  

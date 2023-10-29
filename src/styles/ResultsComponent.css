@@ -1,9 +1,14 @@
 .sortinghat-container {
-    text-align: center;
+  text-align: center;
 }
 
 img {
-    width: 250px;
-    height: auto;
-    margin: auto;
+  width: 250px;
+  height: auto;
+  margin: auto;
+}
+@media screen and (max-width: 630px) {
+  img {
+    width: 100px;
+  }
 }

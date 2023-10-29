@@ -3,7 +3,7 @@ import React from "react";
 function ButtonComponent({ buttonText, onClick }) {
   return (
     <button
-      style={{ border: "none", padding: "10px 24px", borderRadius: "20px", marginTop:'40px'}}
+      style={{ border: "none", padding: "10px 24px", borderRadius: "20px"}}
       onClick={onClick}
     >
       {buttonText}

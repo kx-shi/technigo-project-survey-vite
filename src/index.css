@@ -19,18 +19,18 @@ body{
 }
 /* Question card styling */
 .question-card-container {
-  min-width: fit-content;
+  width: 300px;
   position: absolute;
   padding: 100px 50px;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 20px;
-  border: 1px solid white;
   background-color: rgb(0,0,0,0.8);
 }
 .button-container {
   text-align: center;
+  margin-top: 30px;
 }
 /* On 1080px-screen and less*/
 @media screen and (max-width: 1080px) {
@@ -42,8 +42,9 @@ body{
 /* On 630px-screen and less*/
 @media screen and (max-width: 630px) {
   .question-card-container{
-    padding: 60px 20px;
-    
+    width: 80%;
+    padding: 20px 20px;
+    overflow-y: scroll;
   }
   
 }

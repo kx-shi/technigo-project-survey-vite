@@ -1,20 +1,19 @@
 import React from "react";
 
-function QuestionSelectDropdown({
-  questionText,
-  optionText1,
-  optionText2,
-  optionText3,
-}) {
-  const dropdownStyle = { border: "5px solid #ffffff", borderRadius: "5px" };
+function QuestionSelectDropdown({questionData, updateFunction}) {
+  const dropdownStyle = { border: "5px solid #ffffff", borderRadius: "5px", padding:'4px 12px' };
+  const noWeighting = [0,0,0,0];
+
   return (
-    <div>
-      <p>{questionText}</p>
-      <select style={dropdownStyle}>
-        <option value=" ">Select .......</option>
-        <option value=" ">{optionText1}</option>
-        <option value=" ">{optionText2}</option>
-        <option value=" ">{optionText3}</option>
+    <div style={{textAlign:'center'}}>
+      <p>{questionData.text}</p>
+      <select style={dropdownStyle} onChange={updateFunction}>
+        <option value={noWeighting}>Select .......</option>
+        {questionData.answers.map((answer, idx) => {
+          return(
+              <option key={idx} value={[answer.weighting]}>{answer.text}</option>
+          )
+        })}
       </select>
     </div>
   );

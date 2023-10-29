@@ -9,6 +9,7 @@ import img4 from "./assets/img4.jpg";
 import img5 from "./assets/img5.jpg";
 import data from "/data.json";
 import './index.css';
+import ResultsComponent from "./components/ResultsComponent";
 
 
 export const App = () => {
@@ -19,27 +20,31 @@ export const App = () => {
   const [currentWeighting, setCurrentWeighting] = useState([0.0,0.0,0.0,0.0]);
   const [results, setResults] = useState([0.0,0.0,0.0,0.0]);
   const [houseIndex, setHouseIndex] = useState(-1);
+  const [buttonText, setButtonText] = useState("Next");
+  const [userName, setUserName] = useState("");
 
   /* Handles clicks on button
    * Updates question number, background image, and shows results when last question answered
    */
   const handleNextQuestion = () => {
     switch(true) {
-      case (currentQuestion < totalQuestions && currentQuestion > 0):
-        // handle question number
-        setCurrentQuestion(currentQuestion + 1);
-        // handle background image
-        setCurrentBackground((currentBackground + 1) % images.length);
-        // update results
-        updateResults(currentWeighting);
+      case (currentQuestion < totalQuestions):
+        setCurrentQuestion(currentQuestion + 1); // handle question number
+        setCurrentBackground((currentBackground + 1) % images.length);  // handle background image
+        updateResults(currentWeighting); // update results
+        if(currentQuestion == totalQuestions-1) {
+          setButtonText("Submit");
+        }else {
+          setButtonText("Next");
+        }
         break;
       case (currentQuestion >= totalQuestions):
-        handleResults(currentQuestion);
+        handleResults();
+        setButtonText("Sort me again!");
         break;
       default:
-        console.log("End of quiz")
-        console.log(`currentQuestion: ${currentQuestion}`)
-        console.log(currentQuestion === 0)
+        setButtonText("Next");
+        break;
     }
   };
 
@@ -61,9 +66,9 @@ export const App = () => {
         } 
     } 
     setHouseIndex(maxIndex);
-
     setCurrentQuestion(0);
-    console.log(houseIndex)
+    setCurrentWeighting([0.0,0.0,0.0,0.0]);
+    setResults([0.0,0.0,0.0,0.0]);
   }
 
   /* Updates results between questions */
@@ -82,13 +87,17 @@ export const App = () => {
     setCurrentWeighting(weightsAsFloatArray);
   }
 
+  const storeUserName = (e) => {
+    setUserName(e.target.value);
+  }
+
   return (
       <div className="container" style={{ backgroundImage: `url(${images[currentBackground]})` }}>
         <div className="question-card-container">
           <QuestionNumber questionNumber={currentQuestion} text={`Question ${currentQuestion}/${totalQuestions}`} />
 
           {currentQuestion === 1 && (
-            <Question question={data.questions[0]} updateFunction={handleChange} />
+            <Question question={data.questions[0]} updateFunction={handleChange}/>
           )}
           
           {currentQuestion === 2 && (
@@ -96,33 +105,30 @@ export const App = () => {
           )}
 
           {currentQuestion === 3 && (
-            <Question question={data.questions[2]} updateFunction={handleChange} />
+            <Question question={data.questions[2]} updateFunction={handleChange}/>
           )} 
 
           {currentQuestion === 4 && (
-            <Question question={data.questions[3]} updateFunction={handleChange} />
+            <Question question={data.questions[3]} updateFunction={handleChange}/>
           )} 
 
           {currentQuestion === 5 && (
-            <Question question={data.questions[4]} updateFunction={handleChange} />
+            <Question question={data.questions[4]} updateFunction={handleChange}/>
           )}
           
           {currentQuestion === 6 && (
-            <Question question={data.questions[5]} updateFunction={handleChange} />
+            <Question question={data.questions[5]} updateFunction={storeUserName} />
           )}
 
           {
           currentQuestion === 0 && ( // Results card
-            <div className="results-container">
-              <h3 style={{ textAlign: "center" }}>Congratulations, you have been sorted into {data.houses[houseIndex].housename}</h3>
-              <p>{data.houses[houseIndex].description}</p>
-            </div>
+            <ResultsComponent userName={userName} houseIndex={houseIndex} />
           )} 
           
         
         <div className="button-container">
           <ButtonComponent 
-            buttonText={currentQuestion<totalQuestions && currentQuestion > 0 ? "Next question" : "Submit"}
+            buttonText={buttonText}
             onClick={handleNextQuestion} />
         </div>
       </div>

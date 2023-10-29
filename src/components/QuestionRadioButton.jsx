@@ -8,7 +8,7 @@ function QuestionRadioButton({questionData, updateFunction}) {
         {questionData.answers.map((answer, idx) => {
             return(
               <div key={idx} style={{marginBottom:'8px'}}>
-                <input type={questionData.type} name="radiobutton" onChange={updateFunction} value={answer.weighting}/>
+                <input type={questionData.type} name="radiobutton" onChange={updateFunction} value={[answer.weighting]}/>
                 <label htmlFor={`option${idx}`}>{answer.text}</label>
               </div>
             )

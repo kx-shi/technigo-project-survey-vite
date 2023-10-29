@@ -11,7 +11,7 @@ function QuestionSelectDropdown({questionData, updateFunction}) {
         <option value={noWeighting}>Select .......</option>
         {questionData.answers.map((answer, idx) => {
           return(
-              <option key={idx} value={answer.weighting}>{answer.text}</option>
+              <option key={idx} value={[answer.weighting]}>{answer.text}</option>
           )
         })}
       </select>
